@@ -1,11 +1,12 @@
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import API_URL from './config';
 import { formatMoney } from '../../utils/money';
 
 export function PaymentSummary({ paymentSummary, loadCart }) {
     const navigate = useNavigate();
     const createOrder = async () => {
-        await axios.post('/api/orders');
+        await axios.post(`${API_URL}/api/orders`);
         await loadCart();
         navigate('/orders')
     };

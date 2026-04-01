@@ -2,6 +2,7 @@ import axios from 'axios';
 import dayjs from 'dayjs';
 import { useState, useEffect } from 'react';
 import { useParams, NavLink } from 'react-router';
+import API_URL from './config';
 import { Header } from '../components/Header';
 import './TrackingPage.css';
 
@@ -11,7 +12,7 @@ export function TrackingPage({ cart }) {
 
     useEffect(() => {
         const fetchTrackingData = async () => {
-            const response = await axios.get(`/api/orders/${orderId}?expand=products`);
+            const response = await axios.get(`${API_URL}/orders/${orderId}?expand=products`);
             setOrder(response.data);
         };
 

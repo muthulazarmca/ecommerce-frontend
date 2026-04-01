@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import API_URL from './config';
 import { formatMoney } from '../../utils/money';
 
 export function CartItemDetails({ cartItem, loadCart }) {
@@ -7,14 +8,14 @@ export function CartItemDetails({ cartItem, loadCart }) {
     const [quantity, setQuantity] = useState(cartItem.quantity);
 
     const deleteCartItem = async () => {
-        await axios.delete(`/api/cart-items/${cartItem.productId}`);
+        await axios.delete(`${API_URL}/api/cart-items/${cartItem.productId}`);
         await loadCart();
     };
 
     const updateQuantity = async () => {
         // Switch between true and false for isUpdatingQuantity.
         if (isUpdatingQuantity) {
-            await axios.put(`/api/cart-items/${cartItem.productId}`, {
+            await axios.put(`${API_URL}/api/cart-items/${cartItem.productId}`, {
                 quantity: Number(quantity),
             });
             await loadCart();

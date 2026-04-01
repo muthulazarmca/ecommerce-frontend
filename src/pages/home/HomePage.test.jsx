@@ -2,6 +2,7 @@ import { it, expect, describe, vi, beforeEach } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import axios from 'axios';
+import API_URL from './config';
 import { HomePage } from './HomePage';
 
 vi.mock('axios');
@@ -16,7 +17,7 @@ describe('HomePage component', () => {
         loadCart = vi.fn();
 
         axios.get.mockImplementation((urlPath) => {
-            if (urlPath === '/api/products') {
+            if (urlPath === `${API_URL}/api/products`) {
                 return Promise.resolve({
                     data: [{
                         id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",

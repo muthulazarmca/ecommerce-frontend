@@ -2,6 +2,7 @@ import axios from 'axios';
 import dayjs from 'dayjs'
 import { Fragment } from 'react';
 import { NavLink } from 'react-router';
+import API_URL from './config';
 import BuyAgainIcon from '../../assets/images/icons/buy-again.png';
 
 export function OrderDetailsGrid({ order, loadCart }) {
@@ -9,7 +10,7 @@ export function OrderDetailsGrid({ order, loadCart }) {
         <div className="order-details-grid">
             {order.products.map((orderProduct) => {
                 const addToCart = async () => {
-                    await axios.post('/api/cart-items', {
+                    await axios.post(`${API_URL}/api/cart-items`, {
                         // Note: you can also get the productId from
                         // orderProduct.productId
                         productId: orderProduct.product.id,
