@@ -2,7 +2,7 @@ import axios from 'axios';
 import dayjs from 'dayjs'
 import { Fragment } from 'react';
 import { NavLink } from 'react-router';
-import API_URL from './config';
+import API_URL from "../../config";
 import BuyAgainIcon from '../../assets/images/icons/buy-again.png';
 
 export function OrderDetailsGrid({ order, loadCart }) {

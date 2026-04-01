@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import API_URL from './config';
+import API_URL from "../../config";
 import { Header } from '../../components/Header';
 import { OrdersGrid } from './OrdersGrid';
 import './OrdersPage.css';

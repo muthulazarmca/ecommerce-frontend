@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import axios from 'axios';
-import API_URL from './config';
+import API_URL from "../../config";
 import { formatMoney } from '../../utils/money';
 
 export function DeliveryOptions({ cartItem, deliveryOptions, loadCart }) {

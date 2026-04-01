@@ -2,7 +2,7 @@ import { it, expect, describe, vi, beforeEach } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import axios from 'axios';
-import API_URL from './config';
+import API_URL from "../../config";
 import { HomePage } from './HomePage';
 
 vi.mock('axios');

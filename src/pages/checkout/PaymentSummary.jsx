@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useNavigate } from 'react-router';
-import API_URL from './config';
+import API_URL from "../../config";
 import { formatMoney } from '../../utils/money';
 
 export function PaymentSummary({ paymentSummary, loadCart }) {

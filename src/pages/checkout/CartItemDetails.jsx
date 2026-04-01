@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
-import API_URL from './config';
+import API_URL from "../../config";
 import { formatMoney } from '../../utils/money';
 
 export function CartItemDetails({ cartItem, loadCart }) {
